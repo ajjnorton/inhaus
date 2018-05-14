@@ -1,23 +1,56 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-<h1>aosiuaosiud</h1>
-gome mod
-<mat-icon>home</mat-icon>
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
 
+  <mat-card>
+    <mat-card-header fxLayout="column">
+      <h2 style="margin:0px;">inhaus</h2>
+      <p style="font-size:14px; margin:0px; font-weight:200;">Purpose : Landlord test</p>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <p style="margin-top:80px;">
+      <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+    </p>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <form [formGroup]="form" (ngSubmit)="login()" autocomplete="off">
+
+      <div formGroupName="landlordsName" fxLayout="column" fxLayoutAlign="center start">
+
+        <!-- FIRST NAME -->
+        <mat-form-field>
+          <input name="firstName" formControlName="firstName" matInput placeholder="First name" autocomplete="off">
+          <mat-error *ngIf="form.get('landlordsName.firstName').hasError('required')">
+            A first name is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- LAST NAME -->
+        <mat-form-field>
+          <input name="lastName" formControlName="lastName" matInput placeholder="Last name" autocomplete="off">
+        </mat-form-field>
+        <mat-error *ngIf="form.get('landlordsName.lastName').hasError('required')">
+            A last name is required
+          </mat-error>
+      </div>
+
+      <!-- EMAIL -->
+      <mat-form-field>
+        <input name="email" formControlName="email" matInput placeholder="email" autocomplete="off">
+      </mat-form-field>
+
+        <!-- SUBMIT FORM -->
+      <button type="submit" [disabled]="!form.valid" mat-button>Add Landlord</button>
+    </form>
+
+  </mat-card>
+
+  <mat-card *ngFor="let landlord of landlordArray" style="margin:20px 0px 0px 0px">
+    <p>Landlord</p>
+    <pre>{{landlord | json}}</pre>
+  </mat-card>
+
+</div>

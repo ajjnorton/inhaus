@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-inhaub": {
+    "app-inhaus": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-inhaub",
+            "outputPath": "dist/app-inhaus",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-inhaub:build"
+            "browserTarget": "app-inhaus:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-inhaub:build:production"
+              "browserTarget": "app-inhaus:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-inhaub:build"
+            "browserTarget": "app-inhaus:build"
           }
         },
         "test": {
@@ -105,7 +105,7 @@
         }
       }
     },
-    "app-inhaub-e2e": {
+    "app-inhaus-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -113,7 +113,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-inhaub:serve"
+            "devServerTarget": "app-inhaus:serve"
           }
         },
         "lint": {
@@ -128,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "app-inhaub"
+  "defaultProject": "app-inhaus"
 }
