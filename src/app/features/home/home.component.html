@@ -1,4 +1,14 @@
+<div class="header">
+  <div [ngStyle]="{ 'background-color': background_color,
+  'height':'100',
+  'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('+photo+')',
+  'background-size':'cover',
+  'background-position': 'center',
+  'background-repeat': 'no-repeat'
+}" class="imgContainer"></div>
 
-<div class="imgContainer">
-  <div class="tag-line">Hello</div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="tag-line">
+    <h2 class="title-text">inhaus</h2>
+    <p class="description-text">The app for landlords and tenants</p>
+  </div>
 </div>

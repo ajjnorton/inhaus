@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  photo: string;
+  public background_color = "grey";
 
   ngOnInit() {
+    this.photo = "/assets/room-4.jpg";
   }
 
 }

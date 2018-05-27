@@ -1,25 +1,35 @@
 @import "src/styles.scss";
 
 .imgContainer{
-    //height:200px;
-    background-repeat: no-repeat, repeat;
-    background-image: url("/assets/livingroom1.jpg");
-    background-size:cover;
     height:100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    //mask-image: transparent 0%, black 99%;  
+    background-repeat: no-repeat, repeat;
+    //background-image: url("/assets/livingroom1.jpg");
+    background-size:cover;
+   
     background-position: center;
-    
-    mask-image: transparent 25%, black 75%;    
+}
+
+.header{
+    height:100%;
 }
 
 .tag-line{
-    font-weight:200;
-    font-size:40px;
-    color:#ffff;
-    //text-shadow: 1px 1px 4px #000;
     position: absolute;
-    top:250px;
-    text-align: center;
+    height:100%;
+    width:100%;
+    top:0px;
+    color:white;
 }
-
+.title-text{
+    font-size:64px;
+    margin:0px;
+}
+.description-text{
+    font-weight:100;
+    font-size:34px;
+    margin:0px;
+}
 
 
