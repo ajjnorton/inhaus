@@ -1,15 +1,5 @@
 @import "src/styles.scss";
 
-.imgContainer{
-    height:100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
-    //mask-image: transparent 0%, black 99%;  
-    background-repeat: no-repeat, repeat;
-    //background-image: url("/assets/livingroom1.jpg");
-    background-size:cover;
-   
-    background-position: center;
-}
 
 .header{
     height:100%;
@@ -23,13 +13,24 @@
     color:white;
 }
 .title-text{
-    font-size:64px;
+    font-size:84px;
     margin:0px;
+    color:rgb(232, 236, 0);
 }
 .description-text{
     font-weight:100;
     font-size:34px;
     margin:0px;
+}
+.unsplash-img{
+    height:100%;
+
+}
+.ih-icon{
+    text-align:center;
+    font-size:48px;
+    height:48px;
+    width:48px;
 }
 
 

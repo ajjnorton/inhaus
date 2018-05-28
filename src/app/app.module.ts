@@ -12,6 +12,7 @@ import { LandlordSignupComponent } from './features/landlords/landlord-signup/la
 import { AppRoutingModule} from './app-routing.module';
 import { RouterLink } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +32,8 @@ import { HomeComponent } from './features/home/home.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   
 
   ],
