@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
+import { IAppState, rootReducer, INITIAL_STATE } from './store/store';
 
 
 
