@@ -13,6 +13,7 @@ import { AppRoutingModule} from './app-routing.module';
 import { RouterLink } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 
 
 
@@ -33,11 +34,19 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    NgReduxModule
   
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>,
+    devTools: DevToolsExtension) {
+    const enhancers = isDevMode() ? [devTools.enhancer()] : [];
+    ngRedux.configureStore(rootReducer, INITIAL_STATE, [], enhancers);
+  }
+}
+

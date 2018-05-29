@@ -33,8 +33,8 @@
           <input name="lastName" formControlName="lastName" matInput placeholder="Last name" autocomplete="off">
         </mat-form-field>
         <mat-error *ngIf="form.get('landlordsName.lastName').hasError('required')">
-            A last name is required
-          </mat-error>
+          A last name is required
+        </mat-error>
       </div>
 
       <!-- EMAIL -->
@@ -42,12 +42,12 @@
         <input name="email" formControlName="email" matInput placeholder="email" autocomplete="off">
       </mat-form-field>
 
-        <!-- SUBMIT FORM -->
+      <!-- SUBMIT FORM -->
       <button type="submit" [disabled]="!form.valid" mat-button>Add Landlord</button>
     </form>
 
   </mat-card>
-  
+
   <!--<button routerLink="/landlordSignup" type="submit"  mat-button>signup</button>-->
 
   <mat-card *ngFor="let landlord of landlordArray" style="margin:20px 0px 0px 0px">
