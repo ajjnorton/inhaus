@@ -1,11 +1,14 @@
+<div>
+  <mat-toolbar fxLayout>
+    <span  class="menu-item-text menu-title">inhaus</span>
+    <span fxFlex></span>
+    <button  class="menu-item-text" mat-button>Signup</button>
+    <!--<button   class="menu-item-text" mat-button>Login</button>-->
+  </mat-toolbar>
+</div>
 
 <div class="header">
-    <mat-toolbar fxLayout>
-        <span>inhaus</span>
-        <span fxFlex></span>
-        <span class="rhs-menu-item">Signup</span>
-        <span class="rhs-menu-item">Login</span>
-      </mat-toolbar>
+
   <div [ngStyle]="{
   'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('+photo+')',
   'background-size':cover,
@@ -17,7 +20,9 @@
 
   <div fxLayout="column" fxLayoutAlign="center center" class="tag-line">
     <mat-icon class="ih-icon">home</mat-icon>
-    <!--<h2 class="title-text">inhaus</h2>-->
-    <!--<p class="description-text">The app for landlords and tenants</p>-->
+    <button mat-button>LIKE</button>
+    <h2 class="title-text">inhaus</h2>
+    <p class="description-text">The app for landlords and tenants</p>
   </div>
 </div>
+
