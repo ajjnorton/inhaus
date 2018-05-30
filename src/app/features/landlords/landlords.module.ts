@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddLandlordComponent} from './add-landlord/add-landlord.component';
-import { SignupComponent} from './signup/signup.component'
+import { AddLandlordComponent } from './add-landlord/add-landlord.component';
+
+import { LandlordsRoutingModule, routedComponents } from './landlords-routing.module'
+
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    LandlordsRoutingModule
   ],
   declarations: [
     AddLandlordComponent,
-    SignupComponent
+    routedComponents
   ]
 })
 export class LandlordsModule { }

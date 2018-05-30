@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
-  { path: 'words', loadChildren: 'src/app/features/landlords/landlords.module#LandlordsModule' },
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'signup', loadChildren: 'src/app/features/landlords/landlords.module#LandlordsModule' },
+  { path: 'home', component: HomeComponent }
+  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+  //{ path: '**', redirectTo: 'home', pathMatch: 'full' }
 
 ]
 @NgModule({
