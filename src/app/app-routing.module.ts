@@ -7,6 +7,8 @@ import { HomeComponent } from './features/home/home.component';
 const routes: Routes = [
   { path: 'login', component: LandlordSignupComponent },
   { path: 'home', component: HomeComponent },
+  // Lazy load landlord signup module
+  { path: 'landlordSignup', loadChildren: 'app/features/landlords/landlord-signup/landlord-signup.module#LandlordSignupRoutingModule' },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
