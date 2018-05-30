@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LandlordSignupComponent } from './features/landlords/landlord-signup/landlord-signup.component'
 import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
-  { path: 'login', component: LandlordSignupComponent },
   { path: 'home', component: HomeComponent },
   // Lazy load landlord signup module
-  { path: 'landlordSignup', loadChildren: 'app/features/landlords/landlord-signup/landlord-signup.module#LandlordSignupRoutingModule' },
+  { path: 'landlordModule', loadChildren: '/app/features/landlords/landlords.module#LandlordsModule' },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
@@ -24,4 +22,5 @@ const routes: Routes = [
     RouterModule
   ]
 })
+
 export class AppRoutingModule { }
