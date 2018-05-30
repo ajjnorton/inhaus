@@ -4,10 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
+  { path: 'words', loadChildren: 'src/app/features/landlords/landlords.module#LandlordsModule' },
   { path: 'home', component: HomeComponent },
-  // Lazy load landlord signup module
-  { path: 'landlordModule', loadChildren: '/app/features/landlords/landlords.module#LandlordsModule' },
-
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 
