@@ -1,0 +1,28 @@
+<div>
+  <mat-toolbar fxLayout>
+    <span  class="menu-item-text menu-title">inhaus</span>
+    <span fxFlex></span>
+    <button  class="menu-item-text" mat-button>Signup</button>
+    <!--<button   class="menu-item-text" mat-button>Login</button>-->
+  </mat-toolbar>
+</div>
+
+<div class="header">
+
+  <div [ngStyle]="{
+  'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('+photo+')',
+  'background-size':cover,
+  'background-position': center,
+  'background-repeat': repeat,
+  'height':height,
+  'width':height
+  }" class="unsplash-img"></div>
+
+  <div fxLayout="column" fxLayoutAlign="center center" class="tag-line">
+  
+    <img width="70" src="/assets/SVG/inhaus_logo2.svg" alt="">
+    <h2 class="title-text">inhaus</h2>
+    <p class="description-text">The app for landlords and tenants</p>
+  </div>
+</div>
+

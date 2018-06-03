@@ -1,0 +1,53 @@
+@import "src/styles.scss";
+
+
+.header{
+    height:100%;
+}
+
+.tag-line{
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0px;
+    color:white;
+}
+.title-text{
+    font-size:84px;
+    margin:0px;
+    color:rgb(232, 236, 0);
+}
+.description-text{
+    font-weight:100;
+    font-size:34px;
+    margin:0px;
+}
+.unsplash-img{
+    height:100%;
+}
+.ih-icon{
+    text-align:center;
+    font-size:48px;
+    height:48px;
+    width:48px;
+}
+
+.menu-item-text{
+    font-size:16px !important;
+    font-weight:300 !important;
+    letter-spacing: 0.5px !important;
+    z-index:9999;
+}
+mat-toolbar{
+    position:absolute;
+    background:transparent !important;
+    color:#fff !important;
+}
+.menu-title{
+    margin-left:20px;
+    font-weight:400 !important;
+    font-size:24px !important;
+}
+
+
+
