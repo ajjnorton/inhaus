@@ -15,10 +15,10 @@ export class SignupComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
-      landlordsName: fb.group({
-        firstName: ['', [Validators.required]],
-        lastName: ['', [Validators.required]],
-      }),
+      //landlordsName: fb.group({
+        //firstName: ['', [Validators.required]],
+        //lastName: ['', [Validators.required]],
+      //}),
       email: ['', [Validators.required, Validators.email]]
     });
   }
