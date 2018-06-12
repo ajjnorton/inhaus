@@ -1,0 +1,5 @@
+export const FETCH_SOURCE_DATA = 'FETCH_SOURCE_DATA';
+export const ADD_PERSON = 'ADD_PERSON';
+export const ADD_LISTINGS = 'ADD_LISTINGS';
+export const FETCH_PERSONS = 'FETCH_PERSONS';
+export const REMOVE_PERSON = 'REMOVE_PERSON';

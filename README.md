@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# AppInhaus
-=======
 # App-Inhaus
->>>>>>> ca98354afb9119de2fe1b4e1d73d6251f66c7906
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 

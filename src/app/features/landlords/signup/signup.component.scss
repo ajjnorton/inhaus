@@ -1,0 +1,25 @@
+@import "src/styles.scss";
+
+mat-card{
+    width:400px;
+}
+
+mat-card-header{
+    margin-bottom:15px;
+}
+
+
+.container{
+   height:100%;
+   margin:0px;
+}
+
+mat-card-content{
+    margin-top:60px !important;
+    margin-bottom:30px;
+    padding-left:30px;
+    padding-right:30px;
+}
+mat-card-actions{
+    text-align:right;
+}
