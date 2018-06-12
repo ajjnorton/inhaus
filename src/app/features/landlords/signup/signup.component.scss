@@ -13,3 +13,13 @@ mat-card-header{
    height:100%;
    margin:0px;
 }
+
+mat-card-content{
+    margin-top:60px !important;
+    margin-bottom:30px;
+    padding-left:30px;
+    padding-right:30px;
+}
+mat-card-actions{
+    text-align:right;
+}

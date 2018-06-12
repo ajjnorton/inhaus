@@ -3,7 +3,7 @@
 
   <mat-card>
     <mat-card-header fxLayout="column">
-      <h2 style="margin:0px;">inhaus</h2>
+      <h1 style="margin:0px;">signage.ninja</h1>
       <p style="font-size:14px; margin:0px; font-weight:200;">Purpose : Sign up</p>
     </mat-card-header>
     <mat-divider></mat-divider>
@@ -16,10 +16,10 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>-->
+    <mat-card-content>
+      <form fxLayout="column" [formGroup]="form" (ngSubmit)="login()" autocomplete="off">
 
-    <form [formGroup]="form" (ngSubmit)="login()" autocomplete="off">
-
-      <!--<div formGroupName="landlordsName" fxLayout="column" fxLayoutAlign="center start">
+        <!--<div formGroupName="landlordsName" fxLayout="column" fxLayoutAlign="center start">
           <mat-form-field>
             <input name="firstName" formControlName="firstName" matInput placeholder="First name" autocomplete="off">
             <mat-error *ngIf="form.get('landlordsName.firstName').hasError('required')">
@@ -34,20 +34,31 @@
           </mat-form-field>
         </div>-->
 
-      <mat-form-field>
-        <input name="email" formControlName="email" matInput placeholder="email" autocomplete="off">
-        <mat-error *ngIf="form.get('email').hasError('required')">
-          An email address is required
-        </mat-error>
-        <mat-error *ngIf="form.get('email').hasError('email')">
-          Please enter a valid email address
-        </mat-error>
-      </mat-form-field>
 
-      
+        <!-- EMAIL -->
+        <mat-form-field>
+          <input name="email" formControlName="email" matInput placeholder="email" autocomplete="off">
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            An email address is required
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
 
-    </form>
-    <button type="submit" [disabled]="!form.valid" mat-button>Signup</button>
+        <!-- PASSWORD -->
+        <mat-form-field>
+          <input name="password" type="password" formControlName="password" matInput placeholder="password" autocomplete="off">
+          <mat-error *ngIf="form.get('password').hasError('required')">
+            A password is required
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="signup()" type="submit" [disabled]="!form.valid" mat-button>Signup</button>
+    </mat-card-actions>
+
 
   </mat-card>
 
