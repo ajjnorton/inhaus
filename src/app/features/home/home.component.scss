@@ -15,17 +15,20 @@
 .title-text{
     font-size:84px;
     margin:0px;
+    margin-bottom:30px;
     color:rgb(232, 236, 0);
 }
 .description-text{
-    font-weight:100;
-    font-size:34px;
+    font-weight:300;
+    font-size:30px;
     margin:0px;
+    text-align: center;
+    max-width: 650px;;
 }
 .description-subtext{
     text-align: center;
-    margin-top:200px !important;
-    width:500px;
+    margin-top:20px !important;
+    width:600px;
     font-weight:100;
     font-size:14px;
     margin:0px;
@@ -56,6 +59,5 @@ mat-toolbar{
     font-weight:400 !important;
     font-size:24px !important;
 }
-
 
 

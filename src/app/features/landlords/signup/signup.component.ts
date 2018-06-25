@@ -28,7 +28,9 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required]]
     });
 
+    // this should sign a user in if they are already logged in.
     this.afAuth.auth.signOut();
+    // keep track of the user state upon signout we should navigate to the front page.
     this.afAuth.auth.onAuthStateChanged(function (user) {
       if (user) {
         this.user = user;
@@ -42,7 +44,7 @@ export class SignupComponent implements OnInit {
       } else {
         console.log('no user');
       }
-    })
+    });
 
 
   }
@@ -58,17 +60,17 @@ export class SignupComponent implements OnInit {
     console.log(this.form.value);
     //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
 
-    var user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
+    const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
         alert('The password is too weak.');
       } else {
         alert(errorMessage);
       }
       console.log(error);
-    })
+    });
   }
 
 

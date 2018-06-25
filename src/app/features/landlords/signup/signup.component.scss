@@ -1,25 +1,53 @@
 @import "src/styles.scss";
-
-mat-card{
-    width:400px;
+mat-card {
+  margin: 0px;
+  padding: 0px;
+  
+  .title{
+      color:white;
+      margin:0px;
+      
+  }
+  .tag-line {
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    font-size:17px;
+    color:rgb(223, 240, 252);
+  }
+  @media #{$tablet} {
+    width: 50%;
+  }
+  @media #{$desktop} {
+    width: 400px;
+  }
 }
 
-mat-card-header{
-    margin-bottom:15px;
+mat-card-header {
+  margin-bottom: 15px;
+}
+
+.container {
+  height: 100%;
+  margin: 0px;
+}
+
+mat-card-content {
+  margin-top: 60px !important;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+mat-card-actions {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  background-color: rgb(97, 193, 252);
+  margin: 0px;
+  padding: 20px;
 }
 
 
-.container{
-   height:100%;
-   margin:0px;
-}
-
-mat-card-content{
-    margin-top:60px !important;
-    margin-bottom:30px;
-    padding-left:30px;
-    padding-right:30px;
-}
-mat-card-actions{
-    text-align:right;
-}
