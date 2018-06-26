@@ -2,24 +2,40 @@
 mat-card {
   margin: 0px;
   padding: 0px;
-  
-  .title{
-      color:white;
-      margin:0px;
-      
+  height: 100%;
+  .title {
+    color: white;
+    margin: 0px;
+  }
+  .header-text {
+    margin: 20px 0px 10px 0px;
+    font-size: 17px;
+    font-weight: 500;
+    color: darkblue;
   }
   .tag-line {
+    margin-top: 0px;
     font-weight: 300;
-    line-height: 28px;
+    line-height: 23px;
     letter-spacing: 0.5px;
-    font-size:17px;
-    color:rgb(223, 240, 252);
+    font-size: 17px;
+    color: rgb(223, 240, 252);
+    color: darkblue;
+  }
+  .info-text {
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    color: white;
   }
   @media #{$tablet} {
     width: 50%;
+    height: auto;
   }
   @media #{$desktop} {
-    width: 400px;
+    width: 500px;
+    height: auto;
   }
 }
 
@@ -27,13 +43,35 @@ mat-card-header {
   margin-bottom: 15px;
 }
 
-.container {
-  height: 100%;
-  margin: 0px;
-}
 
+  .container-background{
+    height: 100%;
+    margin: 0px;
+    //background-image: url("/assets/SVG/signon.svg");
+    background: linear-gradient( rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.93)),url('/assets/SVG/signon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+
+  }
+
+  .container{
+    height: 100%;
+    margin: 0px;
+  }
+
+
+
+.radio-label{
+    margin-bottom:10px;
+    color:rgb(131, 131, 131);
+    font-weight: 400;
+   
+}
 mat-card-content {
-  margin-top: 60px !important;
+  margin-top: 50px !important;
   margin-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
@@ -50,4 +88,14 @@ mat-card-header {
   padding: 20px;
 }
 
+mat-form-field {
+  margin-bottom: 20px;
+}
 
+mat-radio-group{
+    margin-bottom:20px;
+}
+mat-radio-button{
+   
+    margin-bottom:6px;
+}

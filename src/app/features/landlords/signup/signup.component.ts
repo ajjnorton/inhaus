@@ -6,6 +6,7 @@ import { ILandlord, Landlord } from '../../../shared/models/landlord';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -16,17 +17,14 @@ import { auth } from 'firebase/app';
 export class SignupComponent implements OnInit {
 
   landlordArray: ILandlord[] = [];
-  form;
+  form: FormGroup;
 
   user: any[] = [];
 
 
-  constructor(fb: FormBuilder, public afAuth: AngularFireAuth) {
+  constructor(public fb: FormBuilder, public afAuth: AngularFireAuth, public snackBar: MatSnackBar) {
 
-    this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
-    });
+    this.createForm();
 
     // this should sign a user in if they are already logged in.
     this.afAuth.auth.signOut();
@@ -54,22 +52,64 @@ export class SignupComponent implements OnInit {
     console.log('signup');
   }
 
+  createForm() {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
+
 
   signup() {
     console.log('logger');
     console.log(this.form.value);
+    const self = this;
+    this.handleSignupErrors('auth/invalid-email');
     //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-
+    /*
     const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
-      if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
+      self.handleSignupErrors(errorCode);
+    });
+    */
+  }
+
+  handleSignupErrors(errorCode: string) {
+    switch (errorCode) {
+      case 'auth/email-already-in-use':
+        // Thrown if there already exists an account with the given email address.
+        this.snackBar.open('Sorry this account alteady exists!', 'Goto Login?', {
+          duration: 6000,
+        });
+        this.resetForm();
+        break;
+      case 'auth/invalid-email':
+        // Thrown if the email address is not valid.
+        this.snackBar.open('Sorry this is not a valid email address!', undefined, {
+          duration: 6000,
+        });
+        break;
+      case 'auth/operation-not-allowed':
+        // Thrown if email/password accounts are not enabled. Enable email/password accounts in the Firebase Console, under the Auth tab.
+        break;
+      case 'auth/weak-password':
+        // Thrown if the password is not strong enough
+        break;
+      default:
+      // unknown error has occured
+    }
+  }
+
+  resetForm() {
+    this.form.markAsPristine();
+    this.form.updateValueAndValidity();
+    this.form.markAsUntouched();
+    this.form.updateValueAndValidity();
+    this.form.reset();
+    Object.keys(this.form.controls).forEach(key => {
+      this.form.controls[key].setErrors(null);
     });
   }
 

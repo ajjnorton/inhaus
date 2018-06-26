@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './shared/angular-material.module';
@@ -38,7 +37,6 @@ import { environment } from '../environments/environment';
     NgReduxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
-  
   ],
   providers: [],
   bootstrap: [AppComponent]

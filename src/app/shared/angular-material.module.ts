@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {
   MatAutocompleteModule,
@@ -45,6 +47,7 @@ import {
   ],
   declarations: [],
   exports:[
+    FlexLayoutModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
