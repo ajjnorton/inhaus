@@ -9,9 +9,10 @@
         <p class="header-text">Landlord sign up</p>
         <p class="tag-line">Take the stress out of being a landlord. Sign up now and start enjoying the full benefits of intelligent property
           management.</p>
-        <small class="info-text">To sign up simply enter your email address, a password and you're done. Please note your chosen password must be
+        <small class="info-text">To sign up simply enter your email address, password and signup. You'll then receive a verification email and you're done. Please note your chosen password must be
           at least 6 characters long.
         </small>
+        
       </mat-card-header>
       <mat-divider></mat-divider>
       <!--<p style="margin-top:80px;">
@@ -69,7 +70,7 @@
 
 
           <div style="margin-bottom:30px; margin-top:30px;" fxLayoutAlign="end">
-            <button style="border:1px solid #dfdfdf;" mat-button>Cancel</button>
+            <button [routerLink]="['/home']" style="border:1px solid #dfdfdf;" mat-button>Cancel</button>
             <button style="border:1px solid #dfdfdf; margin-left:30px;" color="primary" type="submit" value="submit" [disabled]="!form.valid"
               mat-button>Signup</button>
           </div>

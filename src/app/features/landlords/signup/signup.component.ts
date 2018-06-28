@@ -64,23 +64,23 @@ export class SignupComponent implements OnInit {
     console.log('logger');
     console.log(this.form.value);
     const self = this;
-    this.handleSignupErrors('auth/invalid-email');
+
     //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-    /*
+
     const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       self.handleSignupErrors(errorCode);
     });
-    */
+
   }
 
   handleSignupErrors(errorCode: string) {
     switch (errorCode) {
       case 'auth/email-already-in-use':
         // Thrown if there already exists an account with the given email address.
-        this.snackBar.open('Sorry this account alteady exists!', 'Goto Login?', {
+        this.snackBar.open('Sorry this email address is already in use! Please try again.', 'Goto Login?', {
           duration: 6000,
         });
         this.resetForm();

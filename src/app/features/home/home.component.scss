@@ -60,4 +60,25 @@ mat-toolbar{
     font-size:24px !important;
 }
 
+.get-started-button{
+    background-color:rgba(0,0,0,0.3);
+    background-repeat: no-repeat;
+    color:white;
+    padding:15px 20px 15px 20px;
+    margin-top:110px;
+    font-weight: 400;
+    border-radius: 40px;
+    font-size: 18px;
+    text-decoration: none;
+    outline: none;
+    border:1px solid rgb(227, 227, 227);
+    width:170px;
+}
+
+.get-started-button:hover{
+    cursor: pointer;
+    color:cornflowerblue;
+    border:1px solid white;
+    background-color:rgba(255,255,255,0.85);
+}
 
