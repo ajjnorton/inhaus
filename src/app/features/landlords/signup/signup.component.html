@@ -8,13 +8,13 @@
         <h1 class="title">inhaus</h1>
         <p class="header-text">Landlord sign up</p>
         <p class="tag-line">Take the stress out of being a landlord. Sign up now and start enjoying the full benefits of intelligent property
-          management.</p>
-        <small class="info-text">To sign up simply enter your email address, password and signup. You'll then receive a verification email and you're done. Please note your chosen password must be
-          at least 6 characters long.
+          management.
+        </p>
+        <small class="info-text">Sign on with one of your existing providers, or create a new account using your phone number or email address.
         </small>
-        
+
       </mat-card-header>
-      <mat-divider></mat-divider>
+      <!--<mat-divider></mat-divider>-->
       <!--<p style="margin-top:80px;">
         <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
       </p>-->
@@ -28,37 +28,20 @@
       <mat-card-content>
         <form fxLayout="column" [formGroup]="form" (ngSubmit)="signup()" autocomplete="off">
 
-          <!--<div formGroupName="landlordsName" fxLayout="column" fxLayoutAlign="center start">
+          <!-- EMAIL
           <mat-form-field>
-            <input name="firstName" formControlName="firstName" matInput placeholder="First name" autocomplete="off">
-            <mat-error *ngIf="form.get('landlordsName.firstName').hasError('required')">
-              A first name is required
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <input name="lastName" formControlName="lastName" matInput placeholder="Last name" autocomplete="off">
-            <mat-error *ngIf="form.get('landlordsName.lastName').hasError('required')">
-              A last name is required
-            </mat-error>
-          </mat-form-field>
-        </div>-->
-
-
-
-          <!-- EMAIL -->
-          <mat-form-field>
-            <input name="email" formControlName="email" matInput placeholder="Your email address" autocomplete="off">
+            <input name="email" type="email" formControlName="email" matInput placeholder="Your email address" autocomplete="off">
             <mat-error *ngIf="form.get('email').hasError('required')">
               An email address is required
             </mat-error>
             <mat-error *ngIf="form.get('email').hasError('email')">
               Please enter a valid email address
             </mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
 
-          <!-- PASSWORD -->
+          <!-- PASSWORD
           <mat-form-field>
-            <input name="password" type="password" formControlName="password" matInput placeholder="Set your password" autocomplete="off">
+            <input name="password" type="password" formControlName="password" matInput placeholder="Set your password" autocomplete="new-password">
             <mat-error *ngIf="form.get('password').hasError('required')">
               A password is required
             </mat-error>
@@ -66,23 +49,32 @@
               Password must be at least six characters long
             </mat-error>
 
-          </mat-form-field>
+          </mat-form-field> -->
 
 
-          <div style="margin-bottom:30px; margin-top:30px;" fxLayoutAlign="end">
+          <!--<div style="margin-bottom:30px; margin-top:30px;" fxLayoutAlign="end">
             <button [routerLink]="['/home']" style="border:1px solid #dfdfdf;" mat-button>Cancel</button>
-            <button style="border:1px solid #dfdfdf; margin-left:30px;" color="primary" type="submit" value="submit" [disabled]="!form.valid"
+           <button style="border:1px solid #dfdfdf; margin-left:20px;" color="primary" type="submit" value="submit" [disabled]="!form.valid"
               mat-button>Signup</button>
-          </div>
-
-
+              <h4 style="margin:15px 20px 0px 20px;">OR</h4>
+              <img class="googleButton" (click)="googleSignin()" src="./assets/btn_google_signin_light_pressed_web.png" alt="">
+          </div>-->
+          <firebase-ui></firebase-ui>
         </form>
       </mat-card-content>
+
+      
 
       <!--<mat-card-actions>
       <button (click)="signup()" type="submit" [disabled]="!form.valid" mat-button>Signup</button>
     </mat-card-actions>-->
 
+    <mat-card-actions>
+      <div style="margin-bottom:40px;" fxLayout fxLayoutAlign="center center">
+          <button class="cancel-button" [routerLink]="['/home']" style="border:1px solid #dfdfdf;" mat-button>Cancel</button>
+      </div>
+        
+    </mat-card-actions>
 
     </mat-card>
 

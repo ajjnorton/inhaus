@@ -76,6 +76,11 @@ export class SignupComponent implements OnInit {
 
   }
 
+  googleSignin(){
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+
   handleSignupErrors(errorCode: string) {
     switch (errorCode) {
       case 'auth/email-already-in-use':
@@ -106,7 +111,6 @@ export class SignupComponent implements OnInit {
     this.form.markAsPristine();
     this.form.updateValueAndValidity();
     this.form.markAsUntouched();
-    this.form.updateValueAndValidity();
     this.form.reset();
     Object.keys(this.form.controls).forEach(key => {
       this.form.controls[key].setErrors(null);

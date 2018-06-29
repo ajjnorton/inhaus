@@ -2,7 +2,7 @@
 mat-card {
   margin: 0px;
   padding: 0px;
-  height: 100%;
+  //height: 100%;
   .title {
     color: white;
     margin: 0px;
@@ -71,16 +71,13 @@ mat-card-header {
    
 }
 mat-card-content {
-  margin-top: 50px !important;
-  margin-bottom: 30px;
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-mat-card-actions {
-  text-align: right;
-  margin-bottom: 20px;
-}
+
 
 mat-card-header {
   background-color: rgb(97, 193, 252);
@@ -98,4 +95,20 @@ mat-radio-group{
 mat-radio-button{
    
     margin-bottom:6px;
+}
+
+.googleButton:hover{
+  cursor: pointer;
+}
+
+.cancel-button{
+  width:222px !important;
+}
+
+
+@supports (-webkit-appearance:none) {
+  .mdl-progress:not(.mdl-progress--indeterminate):not(.mdl-progress--indeterminate) > .auxbar,
+  .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate) > .auxbar {
+    mask: url(/assets/images/buffer.svg?embed) !important;
+  }
 }

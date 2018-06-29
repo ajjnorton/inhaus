@@ -1,0 +1,55 @@
+<div fxLayout fxLayoutAlign="center start" class="container">
+  <div class="page-container">
+    <mat-card>
+      <mat-card-title>inhaus Privacy Policy</mat-card-title>
+
+    </mat-card>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h4>1.0 - Our core values regarding user privacy and data protection</h4>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <ul class="body-text">
+          <li>We have a duty of care to the people & their data used in our system.</li>
+          <li>We believe data protection is a human right.</li>
+          <li>Data is a liability, and should only be collected and processed when necessary.</li>
+          <li>We believe our customers should have complete transparency of and control over their personal data.</li>
+        </ul>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Self aware panel
+          </mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>I'm visible because I am open</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </div>
+</div>
+<p>
+  inhaus privacy policy
+</p>
+<p>
+  Inhaus privacy policy 1.0 - Our core values regarding user privacy and data protection * We have a duty of care to the people
+  & their data used in our system. * We believe data protection is a human right. * Data is a liability, and should only
+  be collected and processed when necessary. * We believe our customers should have complete transparency and control over
+  their personal data. * We will never, sell, rent or distribute or make public your personal information. 2.0 - Legislation
+  Our business, systems and application is designed to comply with the following legislation. * EU Data Protection Directive
+  1995 * EU General Data Protection Regulation 2018 * UK Data Protection Act 1988 3.0 - Information inhaus collects and why
+  we collect it 3.1 - Site Visitor Tracking 3.2 - The inhaus application 3.3 - Contact form 3.4 - News Letter 4.0 - How we
+  store your personal information 5.0 - Our their party data processors 7.0 - Data breaches 8.0 - Data Controller 9.0 - Data
+  protection Officer
+
+
+</p>
