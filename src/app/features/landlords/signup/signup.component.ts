@@ -7,6 +7,7 @@ import { ILandlord, Landlord } from '../../../shared/models/landlord';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase/app';
 import { MatSnackBar } from '@angular/material';
+import { FirebaseUISignInSuccess } from 'firebaseui-angular';
 
 
 @Component({
@@ -34,11 +35,14 @@ export class SignupComponent implements OnInit {
         this.user = user;
         console.log('user logged in');
         console.log(user);
-        user.sendEmailVerification().then(function () {
-          console.log('email sent');
-        }).catch(function (error) {
-          console.log('error');
-        });
+        console.log(user.providerData[0].providerId);
+        if (user.providerData[0].providerId == "password") {
+          user.sendEmailVerification().then(function () {
+            console.log('email sent');
+          }).catch(function (error) {
+            console.log('error');
+          });
+        }
       } else {
         console.log('no user');
       }
@@ -59,27 +63,26 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  /*
+    signup() {
+      console.log('logger');
+      console.log(this.form.value);
+      const self = this;
+  
+      //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  
+      const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        self.handleSignupErrors(errorCode);
+      });
+  
+    }
+    */
 
-  signup() {
-    console.log('logger');
-    console.log(this.form.value);
-    const self = this;
-
-    //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-
-    const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      self.handleSignupErrors(errorCode);
-    });
-
-  }
 
 
-  googleSignin(){
-    //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
 
 
   handleSignupErrors(errorCode: string) {
