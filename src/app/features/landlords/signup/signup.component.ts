@@ -76,8 +76,9 @@ export class SignupComponent implements OnInit {
 
   }
 
+
   googleSignin(){
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
 
