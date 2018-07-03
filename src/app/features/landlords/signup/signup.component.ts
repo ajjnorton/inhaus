@@ -36,11 +36,29 @@ export class SignupComponent implements OnInit {
         console.log('user logged in');
         console.log(user);
         console.log(user.providerData[0].providerId);
+        user.providerData.forEach(function (profile) {
+          console.log("Sign-in provider: " + profile.providerId);
+          console.log("  Provider-specific UID: " + profile.uid);
+          console.log("  Name: " + profile.displayName);
+          console.log("  Email: " + profile.email);
+          console.log("  Photo URL: " + profile.photoURL);
+        });
+        // if the signon provider 
         if (user.providerData[0].providerId == "password") {
           user.sendEmailVerification().then(function () {
             console.log('email sent');
           }).catch(function (error) {
             console.log('error');
+          });
+        } else {
+          console.log("Not a email user so need to verify email");
+          user.updateProfile({
+            displayName: "Jane Q. User",
+            photoURL: "https://example.com/jane-q-user/profile.jpg"
+          }).then(function () {
+            // Update successful.
+          }).catch(function (error) {
+            // An error happened.
           });
         }
       } else {
