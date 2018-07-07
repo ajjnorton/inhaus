@@ -2,9 +2,14 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
 @import '~firebaseui/dist/firebaseui.css';
 
 $masterFont:'Roboto', sans-serif;
+$displayFont:'Montserrat', sans-serif;
+
+
+
 
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
