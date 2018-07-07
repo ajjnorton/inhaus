@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 
 import { ILandlord, Landlord } from '../../../shared/models/landlord';
@@ -24,26 +25,26 @@ export class SignupComponent implements OnInit {
   user: any[] = [];
 
 
-  constructor(private http: HttpClient, public fb: FormBuilder, public afAuth: AngularFireAuth, public snackBar: MatSnackBar) {
+  constructor(public http:Http, public fb: FormBuilder, public afAuth: AngularFireAuth, public snackBar: MatSnackBar) {
 
     this.createForm();
 
     // this should sign a user in if they are already logged in.
     this.afAuth.auth.signOut();
     // keep track of the user state upon signout we should navigate to the front page.
-    let self=this;
+    let self = this;
     this.afAuth.auth.onAuthStateChanged(function (user) {
       if (user) {
         this.user = user;
         console.log('user logged in');
         console.log(user);
         console.log(user.providerData[0].providerId);
-        
-        user.getIdToken(true).then(function(idToken){
+
+        user.getIdToken(true).then(function (idToken) {
           console.log('SHOW TOKEN');
-          self.testApi({token:idToken});
+          self.testApi({ token: idToken });
         });
-        
+
         user.providerData.forEach(function (profile) {
           console.log("Sign-in provider: " + profile.providerId);
           console.log("  Provider-specific UID: " + profile.uid);
@@ -102,16 +103,15 @@ export class SignupComponent implements OnInit {
 
 
   public testApi(token) {
-   console.log("Fire testAPI");
-   const header = new HttpHeaders({
-     'Authorisation':token
-   })
-    this.http.post('/api/init', {
-      headers:header
-    }).subscribe(data => {
+    console.log("Fire testAPI");
+    let headers = new Headers();
+    headers.append("Authorization","Basic "+token);
+
+    this.http.post('/api/init', {headers:headers}).subscribe(data => {
       console.log(data);
     })
   }
+  
 
 
 

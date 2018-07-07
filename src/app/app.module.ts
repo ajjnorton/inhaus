@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { HomeComponent } from './web/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule} from '@angular/http'
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { IAppState, rootReducer, INITIAL_STATE } from './store/store';
 import { environment } from '../environments/environment';
@@ -79,6 +80,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
+    HttpModule,
     NgReduxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

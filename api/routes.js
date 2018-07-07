@@ -46,9 +46,11 @@ router.post('/init', verifyToken, (req, res) => {
 })
 
 function verifyToken(req, res, next) {
-    const bearerHeader = req.headers['authorization'];
+    console.log('verify token middleware')
+    const bearerHeader = req.headers;
+    console.log(bearerHeader)
     if(typeof bearerHeader !== undefined){
-
+        console.log('vetified');
     }else{
         res.status(403).send('Authorisation required');
     }

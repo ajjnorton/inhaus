@@ -21,15 +21,37 @@
 
   <div fxLayout="column" fxLayoutAlign="center center" class="tag-line">
 
-    <img width="70" src="/assets/SVG/inhaus_logo2.svg" alt="">
+    <img width="80" src="/assets/SVG/inhaus_logo4.svg" alt="">
     <h2 class="title-text">inhaus</h2>
     <p class="description-text">The intelligent property management assistant for busy landlords and their tenants.</p>
     <!--<p class="description-subtext">The intelligent property managment assistant</p>-->
     <div>
-      <button [routerLink]="['/signup']" style="margin-right:5px;" class="get-started-button">Get Started</button>
+      <!--<button [routerLink]="['/signup']" style="margin-right:5px;" class="get-started-button">Get Started</button>-->
       <button style="margin-left:5px;" class="get-started-button">Find out more</button>
     </div>
 
   </div>
+</div>
+<div class="card-container">
+
+  <mat-card class="example-card">
+
+    <p class="intro-text">Can you help us by answering one question?</p>
+ 
+    <p class="quest-text">How likely is it that you would use this  help to manage your property portfolio?</p>
+
+    <mat-divider></mat-divider>
+    <mat-card-content fxLayout="column" fxLayoutAlign="start start">
+
+      <mat-checkbox class="survey-question">I would definetly use it</mat-checkbox>
+      <mat-checkbox class="survey-question">I might do</mat-checkbox>
+      <mat-checkbox class="survey-question">I definately would not</mat-checkbox>
+
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-button>NO THANKS</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 <!-- werwer-->
