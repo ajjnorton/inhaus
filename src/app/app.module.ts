@@ -26,6 +26,7 @@ import {
 } from 'firebaseui-angular';
 import { PrivacyComponent } from './web/privacy/privacy.component';
 import { TermsComponent } from './web/terms/terms.component';
+import { BetapageComponent } from './web/betapage/betapage.component';
 
 const facebookCustomConfig: AuthProviderWithCustomConfig = {
   provider: AuthProvider.Facebook,
@@ -68,7 +69,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     HomeComponent,
     DashboardComponent,
     PrivacyComponent,
-    TermsComponent
+    TermsComponent,
+    BetapageComponent
   ],
   imports: [
     AppRoutingModule,
