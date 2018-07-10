@@ -42,6 +42,18 @@
     padding-bottom:50px;
 }
 
+
+.launch-text{
+    margin-top: 30px !important;
+    color: rgb(58, 58, 104);
+    font-size: 28px;
+    font-weight: 300;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:50px;
+}
+
+
 .mat-radio-label>.mat-radio-label-content {
     white-space: normal;
     margin-left: 30px;
@@ -55,21 +67,32 @@
     position: absolute;
 }
 
-.quest-text {
-    text-align: left;
-    font-size: 14px;
-    color: blue;
-    line-height: 19px;
-    letter-spacing: 0.5px;
+.right{
+    color:cornflowerblue !important;
+    margin-bottom:3px;
+}
+
+.click-here{
+    font-weight:300;
+    font-size:12px;
+    text-align:left;
+    margin-top:5px;
+    color:#999;
+
+}
+.right-container{
+    padding-right:40px;
 }
 
 .left-container-xs {
-    padding:20px;
+    padding-left:20px !important;
+    padding-right:20px !important;
     background-color: white;
     .section-title{
         text-align:left;
         margin-bottom:0px !important;
         margin:0px !important;
+        font-size:17px;
     }
     .welcome-text {
         font-size: 16px;
@@ -79,12 +102,41 @@
         color: rgb(105, 105, 105);
         color: rgb(71, 71, 71); //padding-left:20px;
     }
-
-    
- 
-
 }
 
+.left-container{
+   padding-left:50px;
+   padding-right:50px;
+}
+
+.section-title{
+    text-align:left;
+    margin-bottom:0px !important;
+    margin:0px !important;
+    font-size:20px;
+}
+
+.welcome-text {
+    font-size: 19px;
+    font-weight: 300;
+    text-align: left;
+    line-height: 27px;
+    color: rgb(105, 105, 105);
+    color: rgb(109, 109, 109); //padding-left:20px;
+}
+
+
+textarea{
+    border:1px solid rgb(240, 240, 240);
+    margin:0px !important;
+    line-height:20px;
+   
+    outline:none;
+    font-size:14px;
+    font-weight:300;
+    resize: none;
+    //margin-right:5px !important;
+}
 
 
 
@@ -93,6 +145,7 @@
     background-color:rgb(250, 250, 250) !important;
     height:100%;
     width:100%;
+    padding-right:0px !important;
     .survey-container {
         //background-color: white;
         padding:20px;
@@ -123,10 +176,11 @@
         border:1px solid rgb(240, 240, 240);
         margin:0px !important;
         line-height:20px;
-        width:100%;
+        width:100% !important;
         outline:none;
         font-size:14px;
         font-weight:300;
+        resize: none;
     }
     .click-here{
         font-weight:300;
@@ -140,7 +194,8 @@
 
 
 
-.text-lg {
-    color: blue;
-}
+
+
+
+
 

@@ -5,78 +5,47 @@
     <div class="header">
       <img width="70" src="/assets/SVG/Asset 3.svg" alt="">
       <h2 class="title-text">inhaus</h2>
-      <p ngClass.xs="launch-text-xs">Stay tuned, we are launching very soon.In the meantime ...</p>
+      <p  ngClass.xs="launch-text-xs" class="launch-text">Stay tuned, we are launching very soon.<br>In the meantime ...</p>
+ 
     </div>
 
-    <div fxLayout fxLayout.xs="column">
+    <div fxLayout fxLayout.xs="column" fxLayout>
       <!-- left container text -->
-      <div ngClass.xs="left-container-xs" ngClass.md="text-lg">
+      <div ngClass.xs="left-container-xs" class="left-container" fxFlex>
         <h4 class="section-title">We could really use your help.</h4>
         <p class="welcome-text">We are a small team of landlords and software engineers who couldn’t find any online property management platforms
           that were simple to use, reasonably priced, and had the features we needed. So we decided to build one ourselves.
         </p>
         <p class="welcome-text">We’re building a platform that will work for us and we want it to work for landlords like you too.</p>
-        <p class="welcome-text">You can really help us build somthing that works for us all by answering one question below.</p>
+        <p fxHide fxShow.gt-xs="true" class="welcome-text">You can really help us build something worthwhile that works for us all by answering the question opposite.</p>
+        <p fxHide fxShow.lt-sm="true" class="welcome-text">You can really help us build something worthwhile that works for us all by answering the question below.</p>
         <p class="welcome-text">Thanks for your help!
           <br>inhaus</p>
 
       </div>
       <!-- right container survey -->
-      <div ngClass.xs="right-container-xs">
-        <div class="survey-container">
+      <div ngClass.xs="right-container-xs" class="right-container" fxFlex>
+        
+
+        <div *ngIf="thankYou" class="survey-container">
+          thanss
+        </div>
+
+        <div *ngIf="!thankYou" class="survey-container">
 
 
 
-          <h3 style="margin:0px; text-align:left;">Your Question</h3>
-          <p class="survey-question">Which aspect of your property management activity currently causes you the most pain?</p>
+          <h4 class="section-title">Question</h4>
+          <p class="welcome-text right">{{questions[0].question}}</p>
           <div style="text-align:left;">
-              <p class="click-here">Click here to see what other people are saying</p>
+            <p class="click-here">Click here to see what other people are saying</p>
           </div>
-          <textarea rows="9" ></textarea>
-       
-          <button style="margin-top:20px; margin-bottom:40px; padding-left:40px; padding-right:40px;" mat-raised-button color="primary">Send</button>
-          
-         
+          <form  (ngSubmit)="onSubmit(form.value)" fxLayout="column" [formGroup]="form" autocomplete="off">
+            <textarea formControlName="answer" rows="9"></textarea>
 
+            <button type="submit" value="submit" style="margin-top:20px; margin-bottom:40px;" mat-raised-button color="primary" [disabled]="!form.valid">Send</button>
+          </form>
 
-          <!--<mat-card class="survey-card">
-
-            <p class="intro-text">Three quick questions</p>
-
-            <mat-divider></mat-divider>
-            <mat-card-content fxLayout="column" fxLayoutAlign="start start">
-            
-                <label class="survey-question">1. How do you currently manage your properties?</label>
-                <mat-checkbox class="survey-answer">I use a paper based system</mat-checkbox>
-                <mat-checkbox class="survey-answer">I use a PC spreadsheet & calendar</mat-checkbox>
-                <mat-checkbox class="survey-answer">I use an online system</mat-checkbox>
-
-
-                <mat-radio-group>
-                   
-                    <mat-radio-button class="test" value="1"> <span class="checkbox-text-wrap">SMS reminntract expire dates.</span></mat-radio-button>
-                    <mat-radio-button class="test" value="1"> <span class="checkbox-text-wrap">SMS reminders foire dates.</span></mat-radio-button>
-               </mat-radio-group>
-
-
-           
-
-                <label class="survey-question">2. Would you consider moving to olution.</label>
-                <mat-checkbox class="survey-answer">Definately, yes</mat-checkbox>
-                <mat-checkbox class="survey-answer">Propably ifI need</mat-checkbox>
-                <mat-checkbox class="survey-answer">No, i'm happy with what i've got</mat-checkbox>
-
-                <label class="survey-question">3. Which of the fove.</label>
-                <mat-checkbox class="survey-answer">SMS remies.</mat-checkbox>
-                <mat-checkbox class="survey-answer">Inventory checkin / checkout.</mat-checkbox>
-                <mat-checkbox class="survey-answer">Work orders for repairs and maintenance tasks.</mat-checkbox>
-            
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <button mat-button>NO THANKS</button>
-            </mat-card-actions>
-          </mat-card>-->
         </div>
       </div>
     </div>
