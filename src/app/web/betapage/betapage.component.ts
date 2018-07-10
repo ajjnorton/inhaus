@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-betapage',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BetapageComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(public fb: FormBuilder) {
+    this.createForm();
+  }
 
   ngOnInit() {
+  }
+
+
+  createForm() {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
 }
