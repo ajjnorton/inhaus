@@ -6,8 +6,10 @@ import { AngularMaterialModule } from './shared/angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule} from './app-routing.module';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule,} from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { HomeComponent } from './web/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -86,6 +88,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     NgReduxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [],
