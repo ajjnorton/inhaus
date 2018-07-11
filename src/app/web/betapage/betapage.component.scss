@@ -82,6 +82,7 @@
 }
 .right-container{
     padding-right:40px;
+    height:100% !important;
 }
 
 .left-container-xs {
@@ -117,10 +118,10 @@
 }
 
 .welcome-text {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 300;
     text-align: left;
-    line-height: 27px;
+    line-height: 28px;
     color: rgb(105, 105, 105);
     color: rgb(109, 109, 109); //padding-left:20px;
 }
@@ -138,7 +139,9 @@ textarea{
     //margin-right:5px !important;
 }
 
-
+.survey-container{
+    height:100% !important;
+}
 
 .right-container-xs{
     
@@ -149,6 +152,7 @@ textarea{
     .survey-container {
         //background-color: white;
         padding:20px;
+        height:100%;
     }
     .survey-card {
         border-radius: 10px !important;

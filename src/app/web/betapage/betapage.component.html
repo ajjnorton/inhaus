@@ -5,8 +5,9 @@
     <div class="header">
       <img width="70" src="/assets/SVG/Asset 3.svg" alt="">
       <h2 class="title-text">inhaus</h2>
-      <p  ngClass.xs="launch-text-xs" class="launch-text">Stay tuned, we are launching very soon.<br>In the meantime ...</p>
- 
+      <p ngClass.xs="launch-text-xs" class="launch-text">Stay tuned, we are launching very soon.
+        <br>In the meantime ...</p>
+
     </div>
 
     <div fxLayout fxLayout.xs="column" fxLayout>
@@ -25,11 +26,16 @@
       </div>
       <!-- right container survey -->
       <div ngClass.xs="right-container-xs" class="right-container" fxFlex>
-        
 
-        <div *ngIf="thankYou" class="survey-container">
-          thanss
-        </div>
+
+        <div *ngIf="thankYou" class="survey-container" fxLayoutAlign="center center">
+          <div style="margin-top:50px;">
+            <div><mat-icon style="height:148px; width:148px; font-size:148px; color:cornflowerblue;">thumb_up</mat-icon></div>
+            <h1 style="font-weight:300;">Thank You!</h1>
+            <button mat-stroked-button>View responses</button>
+          </div>
+
+        </div> 
 
         <div *ngIf="!thankYou" class="survey-container">
 
@@ -40,7 +46,7 @@
           <div style="text-align:left;">
             <p class="click-here">Click here to see what other people are saying</p>
           </div>
-          <form  (ngSubmit)="onSubmit(form.value)" fxLayout="column" [formGroup]="form" autocomplete="off">
+          <form (ngSubmit)="onSubmit(form.value)" fxLayout="column" [formGroup]="form" autocomplete="off">
             <textarea formControlName="answer" rows="9"></textarea>
 
             <button type="submit" value="submit" style="margin-top:20px; margin-bottom:40px;" mat-raised-button color="primary" [disabled]="!form.valid">Send</button>
