@@ -1,0 +1,39 @@
+<div class="container" fxLayoutAlign="center start">
+  <div class="page">
+
+
+    <div class="header">
+      <img width="70" src="/assets/SVG/Asset 3.svg" alt="">
+      <h2 class="title-text">inhaus</h2>
+      <h3 style="color:white; letter-spacing:2px; margin:0px;">IN BETA</h3>
+      <p ngClass.xs="launch-text-xs" class="launch-text">Survey Responses.</p>
+      <p class="response-text">Responses are curated so will normally appear within an hour or two</p>
+    </div>
+   
+      <div fxLayoutAlign="center start" *ngFor="let response of responses">
+        <mat-card  class="response-card">
+          <div style="width:100%;" fxLayout>
+            <div fxFlex>
+              <p style="margin-top:0px; margin-bottom:4px;">Question</p>
+            </div>
+            <div>
+              <p class="date-text">Sun 15th July 2018</p>
+            </div>
+
+          </div>
+
+          <p class="question-text">Which aspects of your property management activity currently causes you the most pain?</p>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <p style="padding-top:10px; font-size:16px; ">Answer</p>
+            <p class="answer-text">All match statements should point to documents, not collections. A match statement can point to aities/SF or
+              use wildcards to point to any document in the specified path, as in match In the example above, the match statement
+              ustax. This means the rule applies to any document ions in the matcor NYC.</p>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+ 
+
+  </div>
+</div>

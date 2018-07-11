@@ -29,6 +29,7 @@ import {
 import { PrivacyComponent } from './web/privacy/privacy.component';
 import { TermsComponent } from './web/terms/terms.component';
 import { BetapageComponent } from './web/betapage/betapage.component';
+import { ResponsepageComponent } from './web/responsepage/responsepage.component';
 
 const facebookCustomConfig: AuthProviderWithCustomConfig = {
   provider: AuthProvider.Facebook,
@@ -72,7 +73,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     DashboardComponent,
     PrivacyComponent,
     TermsComponent,
-    BetapageComponent
+    BetapageComponent,
+    ResponsepageComponent
   ],
   imports: [
     AppRoutingModule,

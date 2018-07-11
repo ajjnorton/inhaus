@@ -1,0 +1,87 @@
+@import "src/styles.scss";
+
+.page {
+    height: 100%;
+    width: 100%; //background-color: white;
+}
+
+.container {
+    height: 100%;
+   
+}
+
+.header {
+    background-color: rgb(192, 214, 253);
+    width: 100%;
+}
+
+.header img {
+    margin-top: 40px;
+}
+
+.title-text {
+    font-size: 48px;
+    margin: 0px;
+    color: white;
+    margin-top: 20px;
+    font-weight: 600;
+    font-family: $displayFont;
+}
+
+.launch-text-xs {
+    margin-top: 30px !important;
+    color: rgb(58, 58, 104);
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom:0px;
+}
+
+
+.launch-text{
+    margin-top: 30px !important;
+    color: rgb(58, 58, 104);
+    font-size: 28px;
+    font-weight: 300;
+
+    margin-bottom:5px !important;
+}
+
+.response-card{
+    max-width:650px;
+    text-align:left;
+    margin:30px;
+   
+}
+
+.response-text{
+    font-weight:300;
+    font-size:12px;
+    padding-bottom:30px !important;
+    color:rgb(255, 255, 255);
+    letter-spacing:0.5px;
+}
+
+.date-text{
+    font-size:12px;
+    margin-top:3px;
+    color:rgb(197, 196, 195);
+}
+
+.question-text{
+    color:cornflowerblue;
+    margin:0px;
+    font-weight:300;
+    margin-top:5px;
+    margin-bottom: 20px;
+}
+
+.answer-text{
+    //padding-top:25px;
+    font-weight:300;
+    line-height:24px;
+    letter-spacing:0.2px;
+    color:rgb(133, 133, 133);
+    font-size:16px;
+
+}
+

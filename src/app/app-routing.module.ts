@@ -5,12 +5,14 @@ import { HomeComponent } from './web/home/home.component';
 import { PrivacyComponent } from './web/privacy/privacy.component';
 import { TermsComponent } from './web/terms/terms.component';
 import { BetapageComponent} from './web/betapage/betapage.component'
+import { ResponsepageComponent} from './web/responsepage/responsepage.component'
 
 
 const routes: Routes = [
   { path: 'signup', loadChildren: 'src/app/features/landlords/landlords.module#LandlordsModule' },
   { path: 'home', component: HomeComponent },
   { path: 'welcome', component: BetapageComponent },
+  { path: 'responses', component: ResponsepageComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'termsofservice', component: TermsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
