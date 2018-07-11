@@ -34,9 +34,9 @@ export class BetapageComponent implements OnInit {
     this.items = this.itemsCollection.valueChanges();
     this.items.subscribe( response=>{
       console.log(response);
+      
     })
-
-
+    
   }
 
   ngOnInit() {
@@ -54,6 +54,7 @@ export class BetapageComponent implements OnInit {
     console.log(event.answer);
     this.form.reset();
     this.thankYou = true;
+    this.itemsCollection.add({question:this.questions[0].question, answer:event.answer, dateTime:new Date()});
   }
 
 }
