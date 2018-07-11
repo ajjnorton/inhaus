@@ -26,4 +26,8 @@ export class ResponsepageComponent implements OnInit {
   ngOnInit() {
   }
 
+  isoDate(date){
+    return date.getTime();;
+  }
+
 }
