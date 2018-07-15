@@ -19,8 +19,8 @@
           that were simple to use, reasonably priced, and had the features we needed. So we decided to build one ourselves.
         </p>
         <p class="welcome-text">We’re building a platform that will work for us and we want it to work for landlords like you too.</p>
-        <p fxHide fxShow.gt-xs="true" class="welcome-text">You can really help us build something worthwhile that works for us all by answering the question opposite.</p>
-        <p fxHide fxShow.lt-sm="true" class="welcome-text">You can really help us build something worthwhile that works for us all by answering the question below.</p>
+        <p fxHide fxShow.gt-xs="true" class="welcome-text">We would really appreciate it if you could help us to build something worthwhile by answering the question opposite.</p>
+        <p fxHide fxShow.lt-sm="true" class="welcome-text">We would really appreciate it if you could help us to build something worthwhile by answering the question below.</p>
         <p class="welcome-text">Thanks for your help!
           <br>inhaus</p>
 
@@ -42,9 +42,9 @@
 
 
           <h4 class="section-title">Question</h4>
-          <p class="welcome-text right">{{questions[0].question}}</p>
+          <p class="welcome-text right">{{question}}</p>
           <div style="text-align:left;">
-            <p class="click-here">Click here to see what other people are saying</p>
+            <a [routerLink]="['/responses']" class="click-here">Click here to see what other people are saying</a>
           </div>
           <form (ngSubmit)="onSubmit(form.value)" fxLayout="column" [formGroup]="form" autocomplete="off">
             <textarea formControlName="answer" rows="9"></textarea>

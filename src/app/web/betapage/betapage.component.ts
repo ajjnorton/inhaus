@@ -22,26 +22,36 @@ export class BetapageComponent implements OnInit {
 
   item: Observable<any>;
   items: Observable<any[]>;
+  questionNo:number=0;
+  question:string;
 
   constructor(public fb: FormBuilder, private afs: AngularFirestore, public afAuth: AngularFireAuth) {
     this.createForm();
     this.questions = [
       { question: "Which aspects of your property management activity currently causes you the most pain?" },
-      { question: "What are the most important things our platfom should be able to do for you?" }
+      { question: "What are the most important things our platfom should be able to do for you?" },
+      { question: "Do you currently use cloud based software, If you dont, why is that?" },
     ]
 
     this.itemsCollection = afs.collection<any>('survey');
     this.items = this.itemsCollection.valueChanges();
-    this.items.subscribe( response=>{
+    this.items.subscribe(response => {
       console.log(response);
-      
+
     })
-    
+    this.questionNo=this.getRandomInt(0,this.questions.length);
+    this.question=this.questions[this.questionNo].question;
+
   }
 
   ngOnInit() {
+    
   }
 
+
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
   createForm() {
     this.form = this.fb.group({
@@ -54,7 +64,7 @@ export class BetapageComponent implements OnInit {
     console.log(event.answer);
     this.form.reset();
     this.thankYou = true;
-    this.itemsCollection.add({question:this.questions[0].question, answer:event.answer, dateTime:new Date(), publish:false});
+    this.itemsCollection.add({ question: this.question, answer: event.answer, dateTime: new Date(), publish: false });
   }
 
 }
