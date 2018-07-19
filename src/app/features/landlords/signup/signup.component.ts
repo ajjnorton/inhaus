@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 
 
 import { ILandlord, Landlord } from '../../../shared/models/landlord';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'firebase/app';
+import { auth } from 'firebase';
 import { MatSnackBar } from '@angular/material';
 import { FirebaseUISignInSuccess } from 'firebaseui-angular';
 
@@ -25,7 +26,7 @@ export class SignupComponent implements OnInit {
   user: any[] = [];
 
 
-  constructor(public http:Http, public fb: FormBuilder, public afAuth: AngularFireAuth, public snackBar: MatSnackBar) {
+  constructor(public http:Http, public fb: FormBuilder, public afAuth: AngularFireAuth, public snackBar: MatSnackBar, public router:Router) {
 
     this.createForm();
 
@@ -61,8 +62,8 @@ export class SignupComponent implements OnInit {
           });
         } else {
           console.log("Not a email user so need to verify email");
-
         }
+        self.router.navigate(['/inhaus']);
       } else {
         console.log('no user');
       }
@@ -88,16 +89,13 @@ export class SignupComponent implements OnInit {
       console.log('logger');
       console.log(this.form.value);
       const self = this;
-  
       //this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  
       const user = this.afAuth.auth.createUserWithEmailAndPassword(this.form.value.email, this.form.value.password).catch(function (error) {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         self.handleSignupErrors(errorCode);
       });
-  
     }
     */
 

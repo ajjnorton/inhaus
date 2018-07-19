@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
@@ -12,8 +12,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class BetapageComponent implements OnInit {
 
 
-  questions: any[];
-
   form: FormGroup;
   thankYou = false;
 
@@ -23,29 +21,36 @@ export class BetapageComponent implements OnInit {
   item: Observable<any>;
   items: Observable<any[]>;
   questionNo:number=0;
-  question:string;
+  question:string="";
+
+  questions:any[] = [
+    { question: "Which aspects of your property management activity currently causes you the most pain?" },
+    { question: "What are the most important things our platfom should be able to do for you?" },
+    { question: "Do you currently use cloud based software, If you dont, why is that?" },
+  ]
+
 
   constructor(public fb: FormBuilder, private afs: AngularFirestore, public afAuth: AngularFireAuth) {
     this.createForm();
-    this.questions = [
-      { question: "Which aspects of your property management activity currently causes you the most pain?" },
-      { question: "What are the most important things our platfom should be able to do for you?" },
-      { question: "Do you currently use cloud based software, If you dont, why is that?" },
-    ]
-
-    this.itemsCollection = afs.collection<any>('survey');
-    this.items = this.itemsCollection.valueChanges();
-    this.items.subscribe(response => {
-      console.log(response);
-
-    })
-    this.questionNo=this.getRandomInt(0,this.questions.length);
-    this.question=this.questions[this.questionNo].question;
+    
+    //this.itemsCollection = afs.collection<any>('survey');
+    //this.items = this.itemsCollection.valueChanges();
+    //this.items.subscribe(response => {
+      //console.log(response);
+      
+    //})
+    
+    
 
   }
 
+
   ngOnInit() {
-    
+  console.log("hello");
+    this.questionNo=0;
+    this.questionNo=this.getRandomInt(0,this.questions.length);
+    this.question=this.questions[this.questionNo].question;
+    console.log(this.question);
   }
 
 

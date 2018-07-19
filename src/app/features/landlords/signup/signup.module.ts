@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { SignupRoutingModule, routedComponents} from './signup-routing.module';
+import { AngularMaterialModule } from '../../../shared/angular-material.module';
 
-import { LandlordsRoutingModule, routedComponents } from './landlords-routing.module';
-import { AngularMaterialModule } from '../../shared/angular-material.module';
 
 import {
   AuthMethods,
@@ -14,6 +14,7 @@ import {
   FirebaseUIAuthConfig,
   FirebaseUIModule
 } from 'firebaseui-angular';
+
 
 const facebookCustomConfig: AuthProviderWithCustomConfig = {
   provider: AuthProvider.Facebook,
@@ -49,17 +50,18 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
 };
 
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,
-    LandlordsRoutingModule,
+    SignupRoutingModule,
     AngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
-  declarations: [
-    routedComponents
-  ]
+  declarations: [ routedComponents]
 })
-export class LandlordsModule { }
+export class SignupModule { }

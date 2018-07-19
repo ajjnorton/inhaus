@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule, Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
+import { SignupComponent } from './signup.component'
 
-import { SignupComponent } from './signup/signup.component'
 
 
 const routes: Routes = [
@@ -22,7 +21,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class LandlordsRoutingModule { }
+export class SignupRoutingModule { }
 
 export const routedComponents = [
   SignupComponent

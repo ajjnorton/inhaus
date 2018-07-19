@@ -4,12 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './web/home/home.component';
 import { PrivacyComponent } from './web/privacy/privacy.component';
 import { TermsComponent } from './web/terms/terms.component';
-import { BetapageComponent} from './web/betapage/betapage.component'
-import { ResponsepageComponent} from './web/responsepage/responsepage.component'
+import { BetapageComponent} from './web/betapage/betapage.component';
+import { ResponsepageComponent} from './web/responsepage/responsepage.component';
+import { AuthGuard } from './shared/auth.guard'
 
 
 const routes: Routes = [
-  { path: 'signup', loadChildren: 'src/app/features/landlords/landlords.module#LandlordsModule' },
+  { path: 'signup', loadChildren: 'src/app/features/landlords/signup/signup.module#SignupModule' },
+  { 
+    path: 'inhaus', 
+    canActivate:[AuthGuard],
+    loadChildren: 'src/app/features/landlords/shell/shell.module#ShellModule' },
   { path: 'home', component: HomeComponent },
   { path: 'welcome', component: BetapageComponent },
   { path: 'responses', component: ResponsepageComponent },

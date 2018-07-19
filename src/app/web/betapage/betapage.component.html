@@ -42,7 +42,7 @@
 
 
           <h4 class="section-title">Question</h4>
-          <p class="welcome-text right">{{question}}</p>
+          <p *ngIf="question" class="welcome-text right">{{question}}</p>
           <div style="text-align:left;">
             <a [routerLink]="['/responses']" class="click-here">Click here to see what other people are saying</a>
           </div>
