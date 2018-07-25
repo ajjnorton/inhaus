@@ -6,7 +6,8 @@ import { PrivacyComponent } from './web/privacy/privacy.component';
 import { TermsComponent } from './web/terms/terms.component';
 import { BetapageComponent} from './web/betapage/betapage.component';
 import { ResponsepageComponent} from './web/responsepage/responsepage.component';
-import { AuthGuard } from './shared/auth.guard'
+import { AuthGuard } from './shared/auth.guard';
+import { DashboardComponent} from './features/landlords/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'welcome', component: BetapageComponent },
   { path: 'responses', component: ResponsepageComponent },
+  { path: 'dashboard', component:DashboardComponent},
   { path: 'privacy', component: PrivacyComponent },
   { path: 'termsofservice', component: TermsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

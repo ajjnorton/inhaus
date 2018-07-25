@@ -24,6 +24,13 @@
 
     <img width="70" src="/assets/SVG/Asset 3.svg" alt="">
     <h2 class="title-text">inhaus</h2>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
     <!--<p class="description-text">The intelligent property management assistant for busy landlords and their tenants.</p>-->
     <p class="description-text">Simple property management for busy landlords and their tenants.</p>
     <!--<p class="description-subtext">Simple property managment for busy landlords and their tenants</p>-->

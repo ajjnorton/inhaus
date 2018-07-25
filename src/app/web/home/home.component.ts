@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   }
 
 
+  ngDoCheck(): void {}
+  
   getConfig() {
     this.http.get(this.configUrl).subscribe(data => {
       this.unsplash = data;
