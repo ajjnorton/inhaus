@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: 'dashboard', component:DashboardComponent},
   { path: 'privacy', component: PrivacyComponent },
   { path: 'termsofservice', component: TermsComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+  //{ path: '**', redirectTo: 'home', pathMatch: 'full' }
 
 ];
 @NgModule({
